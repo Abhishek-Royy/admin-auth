@@ -39,7 +39,7 @@ function SignUp() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-400">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
+      <div className="w-full max-w-[360px] p-8 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-center text-2xl font-bold text-gray-800">
           Sign Up
         </h2>
