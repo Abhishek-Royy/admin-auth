@@ -13,7 +13,7 @@ function SignUp() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/auth/signup", {
+      const response = await fetch("https://admin-auth-j4o4.onrender.com/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
