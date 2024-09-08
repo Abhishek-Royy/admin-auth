@@ -1,9 +1,31 @@
 // src/pages/Dashboard.js
-import React from 'react';
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
+import React, { useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  // const navigate = useNavigate();
+
+  // const getUser = async () => {
+  //   try {
+  //     const response = await axios.get("http://localhost:3000/login/success", {
+  //       withCredentials: true,
+  //     });
+  //     console.log("Response: ", response);
+  //   } catch (error) {
+  //     navigate("/");
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
+
+
+  
+
   return (
     <div className="flex">
       <Sidebar />

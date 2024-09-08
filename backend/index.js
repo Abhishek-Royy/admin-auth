@@ -20,7 +20,7 @@ const OAuth2oStrategy = require("passport-google-oauth20").Strategy;
 const clientid = process.env.GOOGLE_CLIENT_ID;
 const clientsecret = process.env.GOOGLE_CLIENT_SECRET;
 
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 app.use(express.json()); // Parse incoming requests with JSON payloads
 
@@ -91,6 +91,26 @@ app.get(
     failureRedirect: "http://localhost:5173/",
   })
 );
+
+app.get("/login/success", async (req, res) => {
+  console.log("Request User: ", req.user);
+
+  if (req.user) {
+    res.status(200).json({ message: "User Logged In", user: req.user });
+  } else {
+    res.status(401).json({ message: "User Unauthorized" });
+  }
+});
+
+//Logout api
+app.get("/logout", (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("http://localhost:5173/");
+  });
+});
 
 // Root route
 app.get("/", (req, res) => {
